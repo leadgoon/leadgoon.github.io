@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 라즈베리 파이로 Eddie Kim somehow managed to fill the plane with poisonous snakes.
+title: 라즈베리 파이로 웹서버 구축하기
 tags: [frontpage, jekyll, blog]
 image: '/images/posts/2.jpg'
 ---
