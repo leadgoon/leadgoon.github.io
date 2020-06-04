@@ -11,10 +11,10 @@ email:       ''
 description: ''
 baseurl:     '' # The subpath of your site, e.g. /blog
 url:         'https://leadgoon.github.io/' # The base hostname & protocol for your site
-twitter:     ''
-github:      ''
-instagram:   ''
-facebook:    ''
+twitter:     'https://twitter.com/'
+github:      'https://github.com/'
+instagram:   'https://www.instagram.com/'
+facebook:    'https://www.facebook.com/'
 
 markdown:  kramdown
 permalink: pretty
