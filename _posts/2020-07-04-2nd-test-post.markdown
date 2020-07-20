@@ -1,31 +1,38 @@
 ---
 layout: post
-title: 라즈베리 파이로 웹서버 구축하기
-tags: [frontpage, jekyll, blog]
-image: '/images/posts/2.jpg'
+title: SSH 기본포트 변경하기
+tags: [SSH 포트변경]
 ---
 
-Lorem ipsum dolor sit amet, vix ut case porro facilisis, alia possit neglegentur vis te. Has cu eirmod abhorreant, vel civibus efficiantur cu. Eu summo elitr vix, iusto putant maluisset per ut, ne etiam vivendum adipisci vel. Vis omnis tempor accusam ei, justo perpetua liberavisse cu qui. Saperet aliquando adipiscing ius ne, ne facer euripidis est. Pro mundi nostrum suavitate et.
+SSH란?
+SSH는 리눅스 서버에 원격접속을 하도록 하는 프로그램을 말한다. 보통 22번 포트를 이용하여 통신을 하는데, 22번 포트가 알려진 포트이기 때문에 이를 변경해서 사용하는 것이 좋다. 일부 회사 보안 방침에 따라 22번 포트나 21번(주로 FTP) 포트로의 접근을 의도적으로 막아놓아서 접근이 불가능한 경우도 있다.
 
-Vix dico eius nominati cu, ex zril commodo fuisset mea. Habeo adhuc audiam ius no. In quis virtute officiis has. Vix ad honestatis accommodare, quis virtute et sit, pertinax expetenda eam id. Duo an fuisset delectus dissentias, justo altera ea per.
+##### Step 1. 기본 포트 접속 테스트
+windows 의 PowerShell 이나 CMD, 리눅스의 터미널창에서 다음과 같이 입력하여 접속 테스트를 한다. 
+기본 포트가 22번 포트이기 때문에 -p [포트번호]를 입력하지 않으면, 자동으로 22번 포트를 사용해서 접속한다. 
 
-##### Todo
+> ssh -p [Port번호] [Username]@xxx.xxx.xxx.xxx (IP주소) 
 
-Duis id ante elit. Aliquam quis tellus id orci eleifend finibus. Donec consequat justo ligula, eget sodales purus hendrerit at.
 
-1. Ut at interdum nunc. Maecenas commodo turpis quis elementum gravida.
-2. Nunc ac sapien tellus. Quisque risus enim, tempus eget porttitor in, pellentesque vel urna.
-    Donec nibh massa, rutrum a sollicitudin eu,
-lacinia in lorem.
+##### Step 2. SSH 포트 변경 설정
 
-##### Graphic design
+ssh 접근 포트를 변경하기 위해 sshd_config 파일을 수정한다. 
 
-> Graphic design is the paradise of individuality, eccentricity, heresy, abnormality, hobbies, and humors. - George Santayana
+> nano /etc/ssh/sshd_config
 
-Vim te case nihil oblique, has partem interpretaris ne, ad admodum accusamus nam. Usu utinam dissentias referrentur ne, vim accusam voluptua pertinacia no. Est no posse utinam inermis, brute errem mentitum et ius, te prompta albucius quo. In pro simul soleat regione.
 
-![alt](https://static.pexels.com/photos/6454/nature-flowers-summer-branches-large.jpg)
+#Port 22 의 주석을 해제하고 원하는 포트 번호로 수정.
 
-Ne reque offendit singulis mea, ad eos ferri doming nostrud. Duis suscipit usu ut, fuisset pericula ex est, et porro prompta his. Audire definiebas voluptatibus et duo, aperiam ocurreret ad nec. Vel ad nostrud principes. Ad liber congue iracundia sed, eirmod erroribus eam te, has veniam epicurei ea.
+sshd 서비스 재시작
 
-Pri probo alterum aliquando an. Duo appetere laboramus intellegat ea, ex suas diam exerci vix. Mel simul debitis id, est nusquam fuisset mentitum in. Te mei iudico iisque.
+> service sshd restart
+
+
+##### Step 3. SSH 접속 테스트
+
+22번 포트로 ssh 접속
+> ssh -p 22 [Username]@xxx.xxx.xxx.xxx (IP주소) 
+
+8000번 포트로 ssh 접속
+> ssh -p 8000 [Username]@xxx.xxx.xxx.xxx (IP주소) 
+
