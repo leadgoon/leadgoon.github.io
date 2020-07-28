@@ -2,7 +2,7 @@
 
 샤이니 서버 포트 지정
 
-```r```
+```r
 options(shiny.port = 7775)
 options(shiny.host = "112.100.45.50")
 shinyApp(ui = ui, server = server)
@@ -10,4 +10,6 @@ shinyApp(ui = ui, server = server)
 
 또는
 
+```r
 runApp("test/app.R", host = "112.100.45.50", port = 8888)
+```
