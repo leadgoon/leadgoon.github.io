@@ -41,3 +41,13 @@ new_post("new", ext = '.Rmd')
 ```
 
 
+# Plumber 로 API 제공하기
+
+plumber.R 파일을 plumb() 함수로 배포하고, $run 옵션을 통해 포트를 지정한다. 
+
+```r
+plumber::plumb("test_API/plumber.R")$run(host = "112.100.45.50", port = 5762)
+```
+
+
+
