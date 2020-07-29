@@ -1,3 +1,12 @@
+---
+layout: post
+title: R shiny App을 웹호스팅하기
+tags: [R Shiny 호스팅]
+---
+
+R shiny App을 만든 후 R-studio 에서 실행하면 로컬 IP인 127.0.0.1 로 실행하게 된다. 
+options() 함수를 사용하여 IP주소와 PORT를 지정하여 외부로 호스팅할 수 있게된다. 
+
 # R Shiny 호스팅하기
 
 샤이니 서버 포트 지정
