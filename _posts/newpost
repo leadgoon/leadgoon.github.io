@@ -1,0 +1,5 @@
+# R studio 에서 파일 디렉토리 검색하기
+
+```r
+list.files(path = "...", pattern = "...", ...)
+```
