@@ -28,10 +28,10 @@ list.files(path = "...", pattern = "^fire")
 
 파일명이 fire 로 시작하고 .xslx 로 끝나는 두 조건을 충족하는 정규표현식은 어떻게 작성해야 할까? 확장자 검색하는 예제를 참조하여 작성해보면 다음과 같다. 
 풀어서 설명하면 
-^fire : fire로 시작하고, 
-\S+ : 공백이아닌 하나 이상의 문자 존재
-. : .을 포함
-(?i)(xls|xlsx)$ :  대소문자 구분 없이 xls 또는 xlsx 로 끝나는 파일
+> ^fire : fire로 시작하고, 
+> \S+ : 공백이아닌 하나 이상의 문자 존재
+> . : .을 포함
+> (?i)(xls|xlsx)$ :  대소문자 구분 없이 xls 또는 xlsx 로 끝나는 파일
 
 ```r
 list.files("D:/Data/국가화재정보시스템", pattern = "^fire\\S+.(?i)(xls|xlsx)$")  
