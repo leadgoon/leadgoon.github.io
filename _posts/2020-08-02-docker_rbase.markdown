@@ -13,7 +13,7 @@ R-Base 도커 컨테이너를 만들어보자. R-studio server 는 arm64 아키�
 즉시 테스트 환경은 아래와 같이 실행하면 새로운 컨테이너를 생성하여 운영체제로 들어갈 수 있다. 
 그리고 r 을 입력하면 r-base 로 들어갈 수 있다. 
 ```
-sudo docker run -ti --rm r-base bash
+sudo docker run -ti --rm -v /data/nextcloud/data/leadgoon/files: r-base bash
 ```
 
 
