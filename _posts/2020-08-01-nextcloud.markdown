@@ -20,4 +20,25 @@ sudo mkdir -p /data/nextcloud/data
 sudo mkdir -p /data/nextcloud/theme
 ```
 
+별도의 디렉토리가 필요한 이유는 도커 내장 디렉토리를 설정하게 되면, 
+도커 컨테이너 삭제할 때 데이터도 전부 삭제된다는 점 때문이다. 
+
+```
+sudo docker run -d \
+-p 8080:80 \
+--name=nextcloud \
+--network=nextcloud \
+--restart=unless-stopped \
+-v /data/nextcloud/nextcloud:/var/www/html \
+-v /data/nextcloud/apps:/var/www/html/custom_apps \
+-v /data/nextcloud/config:/var/www/html/config \
+-v /data/nextcloud/data:/var/www/html/data \
+-v /data/nextcloud/theme:/var/www/html/themes \
+nextcloud
+```
+
+80포트를 많이 쓰기 때문에 80포트로 하였고, 원하는 포트로 변경해주면 됩니다. 
+위에서 만든 폴더를 지정하고 실행하면 Nextcloud 컨테이너가 생성되고
+IP:port 로 접속한 후 설정하여 사용하면 끝.
+
 
