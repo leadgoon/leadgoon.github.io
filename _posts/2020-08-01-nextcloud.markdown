@@ -27,7 +27,6 @@ sudo mkdir -p /data/nextcloud/theme
 sudo docker run -d \
 -p 8080:80 \
 --name=nextcloud \
---network=nextcloud \
 --restart=unless-stopped \
 -v /data/nextcloud/nextcloud:/var/www/html \
 -v /data/nextcloud/apps:/var/www/html/custom_apps \
