@@ -1,4 +1,4 @@
----
+--
 layout: post
 title: Nextcloud 도커 컨테이너 설치하기
 tags: [Nextcloud, 도커, 라즈베리파이, 클라우드]
@@ -12,10 +12,12 @@ tags: [Nextcloud, 도커, 라즈베리파이, 클라우드]
 
 도커 컨테이너 생성 전에 필요한 디렉토리를 생성하자
 
-> sudo mkdir -p /data/nextcloud/nextcloud
-> suo mkdir -p /data/nextcloud/apps
-> sudo mkdir -p /data/nextcloud/config
-> sudo mkdir -p /data/nextcloud/data
-> sudo mkdir -p /data/nextcloud/theme
+```
+sudo mkdir -p /data/nextcloud/nextcloud
+suo mkdir -p /data/nextcloud/apps
+sudo mkdir -p /data/nextcloud/config
+sudo mkdir -p /data/nextcloud/data
+sudo mkdir -p /data/nextcloud/theme
+```
 
 
