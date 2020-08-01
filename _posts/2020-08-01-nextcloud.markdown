@@ -14,7 +14,7 @@ tags: [Nextcloud, 도커, 라즈베리파이, 클라우드]
 
 ```
 sudo mkdir -p /data/nextcloud/nextcloud
-suo mkdir -p /data/nextcloud/apps
+sudo mkdir -p /data/nextcloud/apps
 sudo mkdir -p /data/nextcloud/config
 sudo mkdir -p /data/nextcloud/data
 sudo mkdir -p /data/nextcloud/theme
